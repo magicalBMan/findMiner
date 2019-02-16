@@ -6,15 +6,13 @@ let miner;
 let building;
 let side;
 let flipped;
-let c = new Date();
-let d = 2;
 
 function onSubmit() {
     flipped = false;
     miner = parseInt(document.getElementById('miner_Input').value);
     building = document.getElementById('select_Building').value;
     side = document.getElementById('select_Direction').value;
-    if (c.getMonth() > d) return;
+
     switch (building) {
         case 'bldg_60':
             find_Sxty();
@@ -58,11 +56,7 @@ function genericFind() {
 }
 
 function print_Result() {
-    if (building != "bldg_60") {
-        document.getElementById('col_Results').innerHTML = column;
-    } else {
-        document.getElementById('col_Results').innerHTML = sxty_Col;
-    }
+    document.getElementById('col_Results').innerHTML = column;
     document.getElementById('row_Results').innerHTML = row;
     if (flipped) {
         miner = 19 - miner;
@@ -182,7 +176,6 @@ C10 R19   : 16
 C10 R18   : 17
 */
 function find_D_West() {
-    //FUCK D WEST
     var end_1 = 342;
     var end_7 = 342 * 6 + 334;
     var end_8 = end_7 + 339;
@@ -264,32 +257,34 @@ function find_Sxty() {
     // var end_B = 1801;
     // var left_Col = 126;
 
-    let counter = 0;
+    if (miner > 2035) return failed();
+
+    let location = 0;
     let sideNum = 7;
     let row = 18;
-    let columnLetter = 73.5;
-    let leftSide = true;
+    let col_Char_Code = 73.5;
+    let left_Side = true;
     let side = 'L';
-    miner = miner > 234 ? miner - 1 : miner;
+    miner = miner > 181 ? miner - 1 : miner;
 
     for (let i = 0; i < miner; i++) {
-        counter++;
-        if (counter > sideNum) {
-            counter = 1;
+        location++;
+
+        if (location > sideNum) {
+            location = 1;
             row--;
+
             if (row < 1) {
                 row = 18;
-                leftSide = !leftSide;
-                sideNum = leftSide ? 7 : 6;
-                if(i + 3 > end_F && i + 3 < end_F + 3*18) {
-                    console.log('Hey Buddy');
-                    sideNum = 3;
-                }
-                columnLetter -= 0.5;
+                col_Char_Code -= 0.5;
+                left_Side = !left_Side;
+                sideNum = left_Side ? 7 : 6;
+                sideNum = i == 936 ? 3 : sideNum; // one column only has 3 miners
             }
         }
     }
-    document.getElementById('col_Results').innerHTML = String.fromCharCode(columnLetter) + ' ' + side;
+    side = left_Side ? 'L' : 'R';
+    document.getElementById('col_Results').innerHTML = String.fromCharCode(col_Char_Code) + ' ' + side;
     document.getElementById('row_Results').innerHTML = row;
-    document.getElementById('loc_Results').innerHTML = counter;
+    document.getElementById('loc_Results').innerHTML = location;
 }
