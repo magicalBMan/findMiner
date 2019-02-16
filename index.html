@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Find Miner</title>
+        <link href="css/stylesheet.css" rel="stylesheet">
+        <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="body">
+        <form name="quiz" onsubmit="return onSubmit()">
+            <div class="disp">
+                Building: 
+                <div class="right_Stuff"> <select id="select_Building" class="answers">
+                    <option value='nothing'>Click for list of buildings</option>
+                    <option value='bldg_60'>60</option>
+                    <option value='bldg_C'>C</option>
+                    <option value='bldg_D'>D</option>
+                    <option value='bldg_E'>E</option>
+                    <option value='bldg_F'>F</option>
+                </select></div>
+            </div>
+            <div class="disp">
+                Side: 
+                <div class="right_Stuff"><select id="select_Direction" class="answers">
+                    <option value=''>Click for side</option>
+                    <option value='side_East'>East</option>
+                    <option value='side_West'>West</option>
+                </select></div>
+            </div>
+            <div class="disp">
+                Miner: 
+                <div class="right_Stuff"><input class="answers" type="number" id="miner_Input" min='1'></div>
+            </div>
+            <button type="submit" class="button">Find Miner</button>
+        </form>
+    </div>
+    <div id="results" class="results">
+        <div class='disp'>
+            Col:
+            <div class='right_Stuff' id='col_Results'> </div>
+        </div>
+        <div class='disp'>
+            Row:
+            <div class='right_Stuff' id='row_Results'> </div>
+        </div>
+        <div class='disp'>
+            Location:
+            <div class='right_Stuff' id='loc_Results'> </div>
+        </div>
+    </div>
+</body>
+</html>

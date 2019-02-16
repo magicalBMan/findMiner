@@ -1,0 +1,102 @@
+@media only screen and (max-width: 600px) {
+    .body {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: rgb(36, 36, 36);
+        text-align: center;
+        border-radius: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top:24px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .body {
+        background-color: rgb(36, 36, 36);
+        width: 600px;
+        text-align: center;
+        border-radius: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        margin-top:24px;
+    }
+}
+.disp {
+    padding-left: 10px;
+    text-align: start;
+    font-size: 24px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgb(50, 50, 50);
+    box-shadow: 3px 3px 3px black;
+}
+.button {
+    border-radius: 5px;
+    width: 150px;
+    background-color: rgb(80, 80, 80);
+    color: white;
+    border: none;
+    padding: 5px;
+    box-shadow: 3px 3px 3px black
+}
+.button:hover {
+    background-color: rgb(60, 60, 60);
+}
+.button:active {
+    transform:translateY(2px);
+    box-shadow: 0 1px 3px black
+}
+.answers {
+    width: 165px;
+    margin-right: 5px;
+}
+body {
+    max-width: 600px;
+    margin: auto;
+}
+html {
+    min-width: 315px;
+    background-color: black;
+    color: white;
+}
+@media only screen and (max-width: 600px) {
+    .results {
+        background-color: rgb(36, 36, 36);
+        font-size: 24px;
+        text-emphasis: bold;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        padding-top:1px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .results {
+        width: 600px;
+        background-color: rgb(36, 36, 36);
+        font-size: 24px;
+        text-emphasis: bold;
+        margin-top: 5px;
+        border-radius: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+}
+.right_Stuff {
+    float: right;
+    padding-right: 10px;
+}
