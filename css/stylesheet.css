@@ -46,7 +46,8 @@
     color: white;
     border: none;
     padding: 5px;
-    box-shadow: 3px 3px 3px black
+    box-shadow: 3px 3px 3px black;
+    outline: 0;
 }
 .button:hover {
     background-color: rgb(60, 60, 60);

@@ -12,6 +12,8 @@ function onSubmit() {
     miner = parseInt(document.getElementById('miner_Input').value);
     building = document.getElementById('select_Building').value;
     side = document.getElementById('select_Direction').value;
+    offset = parseInt(document.getElementById('offset_Input').value);
+    console.log(offset);
 
     switch (building) {
         case 'bldg_60':
@@ -29,7 +31,7 @@ function onSubmit() {
             break;
         case 'bldg_E':
             if (side == "side_West") {
-                console.log("running E West")
+                console.log("running E West");
                 find_E_West();
             } else {
                 console.log("running E East");
